@@ -1,0 +1,48 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no employee -->
+  <div class="no-data text-center" *ngIf="Item.length == 0">
+    <p>There is no item added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-item">Add Item</button>
+  </div>
+
+  <!-- Employees list table, it hides when there is no employee -->
+  <div *ngIf="Item.length !== 0">
+    <h3 class="mb-3 text-center">Items List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">az</th>
+            <th scope="col">Public IP</th>
+            <th scope="col">Private IP</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of Item">
+            <td>{{item.ec2Id}} * </td>
+            <td>{{item.name}} * </td>
+            <td>{{item.type}} * </td>
+            <td>{{item.state}} * </td>
+            <td>{{item.az}} * </td>
+            <td>{{item.privateIP}} * </td>
+            <td>{{item.privateIP}}</td>
+            <td>
+              <span class="edit" routerLink="/item-edit/{{item.id}}">Edit</span>
+              <span class="delete" (click)="deleteItem(item.id)">Delete</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+

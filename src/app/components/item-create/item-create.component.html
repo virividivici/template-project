@@ -1,0 +1,34 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Create Item</h3>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="itemDetails.name" class="form-control" placeholder="Name">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="itemDetails.type" class="form-control" placeholder="Type">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="itemDetails.state" class="form-control" placeholder="State">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="itemDetails.az" class="form-control" placeholder="az">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="itemDetails.publicIP" class="form-control" placeholder="Public IP">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="itemDetails.privateIP" class="form-control" placeholder="Private IP">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addItem()">Create Item</button>
+    </div>
+
+  </div>
+</div>
