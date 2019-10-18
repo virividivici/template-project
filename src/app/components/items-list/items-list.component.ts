@@ -9,6 +9,8 @@ import { RestApiService } from "../../shared/service/rest-api.service";
 export class ItemsListComponent implements OnInit {
 
   Item: any = [];
+  key: string = 'name'; //set default
+  reverse: boolean = false;
 
   constructor(
     public restApi: RestApiService
@@ -33,5 +35,10 @@ export class ItemsListComponent implements OnInit {
       })
     }
   }  
+
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 
 }

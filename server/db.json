@@ -3,7 +3,7 @@
     {
       "id": 1,
       "ec2Id": "a-123456abcd",
-      "name": "magnolia",
+      "name": "z magnolia",
       "type": "t2.medium",
       "state": "running",
       "az": "us-east-1b",
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "ec2Id": "a-123457abcd",
-      "name": "magnolia",
+      "name": "b magnolia",
       "type": "t2.medium",
       "state": "running",
       "az": "us-east-1b",
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "ec2Id": "a-123458abcd",
-      "name": "magnolia",
+      "name": "c magnolia",
       "type": "t2.medium",
       "state": "running",
       "az": "us-east-1b",

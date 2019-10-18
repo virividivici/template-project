@@ -34,6 +34,7 @@ describe('RestApiService', () => {
 	      "privateIP":"10.20.30.40"
 	    };
         restApiService.getItems().subscribe(data => {
+          console.log('======>',data)
           expect(data[0]).toEqual(mockItemData);
         });
 

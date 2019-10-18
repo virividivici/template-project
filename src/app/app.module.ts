@@ -7,17 +7,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { ItemCreateComponent } from './components/item-create/item-create.component';
-import { ItemDetailsComponent } from './components/item-details/item-details.component';
 import { ItemUpdateComponent } from './components/item-update/item-update.component';
 import { ItemsListComponent } from './components/items-list/items-list.component';
+import { ArraySortPipe } from './shared/pipe/array-sort.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemCreateComponent,
-    ItemDetailsComponent,
     ItemUpdateComponent,
-    ItemsListComponent
+    ItemsListComponent,
+    ArraySortPipe
   ],
   imports: [
     BrowserModule,
