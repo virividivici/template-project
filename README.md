@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
+## Steps to run the project
+
+-clone the project from github repo
+-npm install
+- [sudo] npm install -g json-server
+- json-server --watch server/db.json
+-ng start
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
