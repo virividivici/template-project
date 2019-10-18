@@ -6,7 +6,7 @@
       "name": "z magnolia",
       "type": "t2.medium",
       "state": "running",
-      "az": "us-east-1b",
+      "az": "uk-east-1b",
       "publicIP": "54.210.167.204",
       "privateIP": "10.20.30.40"
     },
@@ -18,7 +18,7 @@
       "state": "running",
       "az": "us-east-1b",
       "publicIP": "54.210.167.204",
-      "privateIP": "10.20.30.40"
+      "privateIP": "20.60.80.40"
     },
     {
       "id": 3,
@@ -26,18 +26,18 @@
       "name": "c magnolia",
       "type": "t2.medium",
       "state": "running",
-      "az": "us-east-1b",
-      "publicIP": "54.210.167.204",
+      "az": "eu-west-3b",
+      "publicIP": "00.210.167.204",
       "privateIP": "10.20.30.40"
     },
     {
       "name": "eer",
-      "ec2Id": "",
+      "ec2Id": "w-349895",
       "type": "ewrwer",
       "state": "erer",
       "az": "rewr",
-      "publicIP": "erewr",
-      "privateIP": "erewrwer",
+      "publicIP": "00.551.107.200",
+      "privateIP": "11.21.31.41",
       "id": 4
     }
   ]
