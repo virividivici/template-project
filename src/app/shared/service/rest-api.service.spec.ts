@@ -24,18 +24,17 @@ describe('RestApiService', () => {
       it('should call the item map data', () => {
         const { restApiService, httpTestingController } = setup();
         const mockItemData = {
-	      "id": 1,
-	      "ec2Id": "a-123456abcd",
-	      "name": "magnolia",
-	      "type": "t2.medium",
-	      "state": "running",
-	      "az": "us-east-1b",
-	      "publicIP": "54.210.167.204",
-	      "privateIP":"10.20.30.40"
-	    };
+          "id": 1,
+          "ec2Id": "a-123456abcd",
+          "name": "z magnolia",
+          "type": "t2.medium",
+          "state": "running",
+          "az": "us-east-1b",
+          "publicIP": "54.210.167.204",
+          "privateIP":"10.20.30.40"
+        };
         restApiService.getItems().subscribe(data => {
-          console.log('======>',data)
-          expect(data[0]).toEqual(mockItemData);
+          expect(data.data).toEqual(mockItemData);
         });
 
         const req = httpTestingController.expectOne('http://localhost:3000/items');

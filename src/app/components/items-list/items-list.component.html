@@ -1,7 +1,7 @@
 <div class="container custom-container-2">
   <div class="row">
     <nav class="navbar">
-      <input class="form-control" type="text" name="search">      
+      <input class="form-control" type="text" [(ngModel)]="search" placeholder="Search" >      
     </nav>
   </div>
 
@@ -13,29 +13,30 @@
 
   <!-- Employees list table, it hides when there is no employee -->
   <div *ngIf="Item.length !== 0">
-    <h3 class="mb-3 text-center">Items List</h3>
+    <h1 class="mb-3">EC2 Dashboard</h1>
 
     <div class="col-md-12">
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th (click)="sort('ec2Id')" scope="col">Id</th>
-            <th (click)="sort('name')" scope="col">Name</th>
-            <th (click)="sort('type')" scope="col">Type</th>
-            <th (click)="sort('state')" scope="col">az</th>
-            <th (click)="sort('az')" scope="col">Public IP</th>
-            <th (click)="sort('privateIP')" scope="col">Private IP</th>
-            <th (click)="sort('privateIP')" scope="col">Action</th>
+            <th (click)="sort('ec2Id')" scope="col">Id <fa *ngIf="key === 'ec2Id'" name="{{reverse?'angle-down':'angle-up'}}" ></fa></th>
+            <th (click)="sort('name')" scope="col">Name <fa *ngIf="key === 'name'" name="{{reverse?'angle-down':'angle-up'}}" ></fa></th>
+            <th (click)="sort('type')" scope="col">Type <fa *ngIf="key === 'type'" name="{{reverse?'angle-down':'angle-up'}}" ></fa></th>
+            <th (click)="sort('state')" scope="col">State <fa *ngIf="key === 'state'" name="{{reverse?'angle-down':'angle-up'}}" ></fa></th>
+            <th (click)="sort('az')" scope="col">az <fa *ngIf="key === 'az'" name="{{reverse?'angle-down':'angle-up'}}" ></fa></th>
+            <th (click)="sort('publicIP')" scope="col">Public IP <fa *ngIf="key === 'publicIP'" name="{{reverse?'angle-down':'angle-up'}}" ></fa></th>
+            <th (click)="sort('privateIP')" scope="col">Private IP <fa *ngIf="key === 'privateIP'" name="{{reverse?'angle-down':'angle-up'}}" ></fa></th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of Item | sort:(reverse? 'asc' : 'desc'):key">
-            <td>{{item.ec2Id}} * </td>
-            <td>{{item.name}} * </td>
-            <td>{{item.type}} * </td>
-            <td>{{item.state}} * </td>
-            <td>{{item.az}} * </td>
-            <td>{{item.privateIP}} * </td>
+          <tr *ngFor="let item of Item | sort:(reverse? 'asc' : 'desc'):key | filter: { name: search, type: search, state: search, id: search, publicIP: search, privateIP: search, az: search} : false">
+            <td>{{item.ec2Id}} </td>
+            <td>{{item.name}}  </td>
+            <td>{{item.type}}  </td>
+            <td>{{item.state}} </td>
+            <td>{{item.az}} </td>
+            <td>{{item.privateIP}}  </td>
             <td>{{item.privateIP}}</td>
             <td>
               <span class="edit" routerLink="/item-edit/{{item.id}}">Edit</span>
